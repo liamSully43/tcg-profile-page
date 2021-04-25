@@ -1,0 +1,284 @@
+@font-face {
+    font-family: Lato;
+    src: url("./Assets/Lato/Lato-Regular.ttf");
+}
+
+:root {
+    --accent: #dd0024;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Lato, sans-serif;
+    color: #fff;
+    object-fit: cover;
+}
+
+body {
+    height: 100vh;
+    background-color: #212121;
+    display: grid;
+    place-items: center;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1 !important;
+}
+
+main {
+    width: 90%;
+    max-width: 1300px;
+    min-height: 450px;
+    display: flex;
+}
+
+aside {
+    display: grid;
+    place-items: center;
+    flex-basis: 50%;
+}
+
+section {
+    flex-basis: 50%;
+    background: linear-gradient(#232323, #353535);
+    padding: 70px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px #161616;
+}
+
+.image-container {
+    width: calc(90vw - 10px);
+    height: calc(90vw - 10px);
+    max-width: 400px;
+    max-height: 400px;
+    background: linear-gradient(#232323, #353535);
+    border-radius: 100%;
+    box-shadow: 1px 1px 20px #161616;
+    overflow: hidden;
+    padding: 5px;
+    animation: grow 1s;
+}
+
+@keyframes grow {
+    from {
+        width: 0px;
+        height: 0px;
+    }
+    to {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.image-container img {
+    border-radius: 100%;
+    opacity: 0;
+}
+
+.fade {
+    animation: fade 0.2s;
+    opacity: 1 !important;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    width: 100%;
+    font-size: 35px;
+}
+
+.divide {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-bottom: solid 1px var(--accent);
+    animation: expand 1s;
+    width: 100%;
+}
+
+@keyframes expand {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.connect-digital {
+    color: #fff;
+    text-decoration-color: #fff;
+    text-decoration-thickness: from-font;
+}
+
+.connect-digital:hover {
+    color: #f47f29;
+    text-decoration-color: #f47f29;
+}
+
+.social-links {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 54px;
+}
+
+.svg-container, .links-container a img {
+    background-color: #353535;
+    border-radius: 100%;
+    border: solid 2px transparent;
+}
+
+.svg-container {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    padding: 5px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.svg-container:hover, .links-container a:hover img {
+    border-color: var(--accent);
+}
+
+.links-container a img {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    margin-top: 4px;
+}
+
+.links-container a:hover img {
+    background-color: var(--accent);
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+.svg-container:hover svg {
+    fill: var(--accent);
+}
+
+.links-container {
+    position: absolute;
+    top: 0px;
+    left: 58px;
+    overflow: hidden;
+    width: 0px;
+    z-index: 1;
+}
+
+.show {
+    animation: show 0.5s;
+    width: 205px;
+}
+
+@keyframes show {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 205px;
+    }
+}
+
+.hide {
+    animation: hide 0.5s;
+    width: 0px;
+}
+
+@keyframes hide {
+    from {
+        width: 205px;
+    }
+    to {
+        width: 0px;
+    }
+}
+
+@media (max-width: 1100px) {
+    main {
+        display: block;
+        margin: 0px;
+    }
+    
+    aside {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    section {
+        width: calc(100% - 140px);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+        height: auto;
+    }
+
+    main {
+        margin: 50px auto;
+    }
+
+    .image-container {
+        animation: grow-mobile 1s;
+    }
+
+    @keyframes grow-mobile {
+        from {
+            width: 0vw;
+            height: 0vw;
+        }
+        to {
+            width: calc(90vw - 10px);
+            height: calc(90vw - 10px);
+        }
+    }
+
+    section {
+        padding: 40px;
+        width: calc(100% - 80px);
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+    
+}
